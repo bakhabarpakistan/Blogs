@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bakhabar Pakistan</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TOP BRAND BAR */
+    .brand-bar {
+      background: #000;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display:flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand h1 {
+      margin: 0;
+      color: #e50914; /* red */
+      font-size: 1.6rem;
+      letter-spacing: 0.6px;
+    }
+    .brand p {
+      margin: 0;
+      color: #ddd;
+      font-size: 0.85rem;
+    }
+
+    /* NAV BAR (below brand) */
+    nav {
+      background: #000;
+      border-top: 1px solid #111;
+      border-bottom: 1px solid #111;
+      padding: 10px 6px;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display:flex;
+      justify-content:center;
+      gap: 22px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 6px 8px;
+    }
+    nav a:hover { color: #e50914; }
+
+    /* CONTENT WRAPPER */
+    .container {
+      width: 94%;
+      max-width: 1200px;
+      margin: 24px auto;
+      flex: 1 0 auto;
+    }
+
+    .section-title {
+      color: #e50914;
+      font-size: 1.4rem;
+      margin: 18px 0;
+      display:inline-block;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #222;
+    }
+
+    /* Current Affairs box */
+    .current-affairs {
+      background: #1f1f1f;
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    }
+    .current-affairs ul { list-style: disc inside; }
+    .current-affairs li { margin: 10px 0; color: #ddd; }
+
+    /* Latest news grid */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: #1b1b1b;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+      transition: transform .18s ease;
+    }
+    .card:hover { transform: translateY(-6px); }
+    .card img {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #333;
+    }
+    .card-body { padding: 14px; }
+    .card h3 { color: #e50914; margin: 0 0 8px; font-size: 1.05rem; }
+    .card p { color: #ccc; margin: 0; font-size: 0.95rem; }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 12px 10px;
+      margin-top: 18px;
+      border-top: 2px solid #222;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .brand-bar { padding: 12px; }
+      .nav-inner { gap: 12px; }
+      .card img { height: 160px; }
+      .brand h1 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand (visible at top like previous) -->
+  <div class="brand-bar">
+    <div class="brand">
+      <h1>Bakhabar Pakistan</h1>
+      <p>Your source for Current Affairs • Sports • Technology • Tips</p>
+    </div>
+    <!-- optional right area (empty for now) to keep layout same as previous -->
+    <div aria-hidden="true" style="width:40px;"></div>
+  </div>
+
+  <!-- Centered navigation under brand -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#current">Home</a>
+      <a href="#current">Current Affairs</a>
+      <a href="#sports">Sports</a>
+      <a href="#tech">Technology</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Current Affairs (top) -->
+    <h2 class="section-title" id="current">Current Affairs</h2>
+    <div class="current-affairs" role="region" aria-label="Current affairs">
+      <ul>
+        <li>Pakistani security forces killed 19 militants in raids near the Afghan border.</li>
+        <li>Floodwaters begin receding in Jalalpur Pirwala, Punjab; nearby towns still evacuated.</li>
+        <li>Boat capsizes during flood relief operations near Multan, Punjab; nine people dead.</li>
+      </ul>
+    </div>
+
+    <!-- Latest News grid -->
+    <h2 class="section-title">Latest News</h2>
+    <div class="news-grid" aria-live="polite">
+      <!-- Sports -->
+      <article class="card" id="sports" aria-label="Sports news">
+        <img
+          src="https://images.unsplash.com/photo-1505842465776-3d90f616310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Stadium during game"
+          onerror="this.onerror=null; this.src='https://picsum.photos/seed/sports/1200/800';"
+        />
+        <div class="card-body">
+          <h3>Sports: Big Game Results</h3>
+          <p>Highlights and analysis from yesterday's matches across the globe.</p>
+        </div>
+      </article>
+
+      <!-- Tech -->
+      <article class="card" id="tech" aria-label="Technology news">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Coding on computer screen"
+          onerror="this.onerror=null; this.src='https://picsum.photos/seed/tech/1200/800';"
+        />
+        <div class="card-body">
+          <h3>Tech: AI Trends in 2025</h3>
+          <p>How artificial intelligence is shaping industries worldwide.</p>
+        </div>
+      </article>
+
+      <!-- Current affairs card -->
+      <article class="card" id="news" aria-label="Current affairs card">
+        <img
+          src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+          alt="Newspapers and headlines"
+          onerror="this.onerror=null; this.src='https://picsum.photos/seed/news/1200/800';"
+        />
+        <div class="card-body">
+          <h3>Current Affairs: Global Updates</h3>
+          <p>Key developments in politics, business, and world news.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Bakhabar Pakistan. All rights reserved.
+  </footer>
+
+</body>
+</html>
