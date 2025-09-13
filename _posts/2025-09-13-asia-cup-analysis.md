@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Asia Cup 2025: Young Pakistan vs Young India – A Battle of Discipline and Firepower"
-date: 2025-09-13
+date: 2025-09-14
 categories: sports
 author: "Tahir Nawaz"
 ---
