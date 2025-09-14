@@ -42,7 +42,7 @@
       font-size: 0.85rem;
     }
 
-    /* NAV BAR (below brand) */
+    /* NAV BAR */
     nav {
       background: #000;
       border-top: 1px solid #111;
@@ -81,8 +81,8 @@
       border-bottom: 2px solid #222;
     }
 
-    /* Current Affairs box */
-    .current-affairs {
+    /* Boxes */
+    .current-affairs, .blog-content {
       background: #1f1f1f;
       padding: 18px;
       border-radius: 8px;
@@ -92,7 +92,7 @@
     .current-affairs ul { list-style: disc inside; }
     .current-affairs li { margin: 10px 0; color: #ddd; }
 
-    /* Latest news grid */
+    /* News grid */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -118,6 +118,17 @@
     .card h3 { color: #e50914; margin: 0 0 8px; font-size: 1.05rem; }
     .card p { color: #ccc; margin: 0; font-size: 0.95rem; }
 
+    /* Blog styles */
+    .blog-content h2, .blog-content h3 {
+      color: #e50914;
+      margin: 14px 0 8px;
+    }
+    .blog-content p, .blog-content li {
+      color: #ddd;
+      margin: 10px 0;
+    }
+    .blog-content ul { list-style: disc inside; }
+
     /* Footer */
     footer {
       background: #000;
@@ -139,17 +150,16 @@
 </head>
 <body>
 
-  <!-- Brand (visible at top like previous) -->
+  <!-- Brand -->
   <div class="brand-bar">
     <div class="brand">
       <h1>Bakhabar Pakistan</h1>
       <p>Your source for Current Affairs • Sports • Technology • Tips</p>
     </div>
-    <!-- optional right area (empty for now) to keep layout same as previous -->
     <div aria-hidden="true" style="width:40px;"></div>
   </div>
 
-  <!-- Centered navigation under brand -->
+  <!-- Nav -->
   <nav>
     <div class="nav-inner">
       <a href="#current">Home</a>
@@ -162,9 +172,9 @@
   </nav>
 
   <main class="container">
-    <!-- Current Affairs (top) -->
+    <!-- Current Affairs -->
     <h2 class="section-title" id="current">Current Affairs</h2>
-    <div class="current-affairs" role="region" aria-label="Current affairs">
+    <div class="current-affairs">
       <ul>
         <li>Pakistani security forces killed 19 militants in raids near the Afghan border.</li>
         <li>Floodwaters begin receding in Jalalpur Pirwala, Punjab; nearby towns still evacuated.</li>
@@ -174,22 +184,22 @@
 
     <!-- Latest News grid -->
     <h2 class="section-title">Latest News</h2>
-    <div class="news-grid" aria-live="polite">
+    <div class="news-grid">
       <!-- Sports -->
-      <article class="card" id="sports" aria-label="Sports news">
+      <article class="card" id="sports">
         <img
           src="https://images.unsplash.com/photo-1505842465776-3d90f616310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
           alt="Stadium during game"
           onerror="this.onerror=null; this.src='https://picsum.photos/seed/sports/1200/800';"
         />
         <div class="card-body">
-          <h3>Sports: Big Game Results</h3>
-          <p>Highlights and analysis from yesterday's matches across the globe.</p>
+          <h3>Sports: Pakistan vs India Case Study</h3>
+          <p>Analysis of Pakistan’s cricket struggles vs India’s dominance.</p>
         </div>
       </article>
 
       <!-- Tech -->
-      <article class="card" id="tech" aria-label="Technology news">
+      <article class="card" id="tech">
         <img
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
           alt="Coding on computer screen"
@@ -202,7 +212,7 @@
       </article>
 
       <!-- Current affairs card -->
-      <article class="card" id="news" aria-label="Current affairs card">
+      <article class="card" id="news">
         <img
           src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
           alt="Newspapers and headlines"
@@ -214,11 +224,48 @@
         </div>
       </article>
     </div>
+
+    <!-- Full Blog Content (Sports section) -->
+    <div class="blog-content">
+      <h2>Case Study: Lessons from the Recent Pakistan vs India Clash</h2>
+      <p><em>Posted on Sept 13, 2025</em></p>
+
+      <p>Cricket is more than just a sport in South Asia—it’s passion, pride, and identity. The recent Pakistan vs India match once again highlighted the striking contrast between the two teams, not just in terms of results but in terms of talent, structure, and mindset. This case study explores the key factors behind India’s rise, Pakistan’s struggles, and what needs to change if Pakistan wants to return to its glory days.</p>
+
+      <h3>India’s Strengths: Talent, Depth, and Strategy</h3>
+      <ul>
+        <li><strong>Power Hitting:</strong> India has built a pool of players who can hit consistently, whether it’s Rohit Sharma, Suryakumar Yadav, or Hardik Pandya.</li>
+        <li><strong>Spin Department:</strong> Kuldeep Yadav and Axar Patel dominate the middle overs, taking wickets and controlling runs.</li>
+        <li><strong>Fast Bowling:</strong> Jasprit Bumrah and Mohammed Siraj give India pace and accuracy Pakistan lacks.</li>
+        <li><strong>Team Balance:</strong> India’s bench strength ensures continuity even when stars are absent.</li>
+      </ul>
+
+      <h3>Pakistan’s Struggles: Selection and Merit Issues</h3>
+      <p>Pakistan continues to grapple with issues of selection and merit. The captain’s T20 stats don’t justify his leadership. Excluding match-winners like Babar Azam and Rizwan weakened the side. Unlike India, which trusted Kohli and Sharma to deliver, Pakistan sidelined its proven players.</p>
+
+      <h3>Key Issues with Pakistan’s Approach</h3>
+      <ul>
+        <li><strong>Lack of Merit:</strong> Favoritism in selection.</li>
+        <li><strong>Poor Planning:</strong> Constant chopping and changing of squads.</li>
+        <li><strong>Leadership Crisis:</strong> Captains without proven performance.</li>
+        <li><strong>Neglecting Seniors:</strong> Experienced players pushed out instead of groomed as mentors.</li>
+      </ul>
+
+      <h3>Lessons from India</h3>
+      <ul>
+        <li><strong>Consistency:</strong> Back your stars in major tournaments.</li>
+        <li><strong>Domestic Development:</strong> Strong local structure for replacements.</li>
+        <li><strong>Fitness & Discipline:</strong> Adopt strict standards like India.</li>
+        <li><strong>Leadership:</strong> Captains must be top performers.</li>
+      </ul>
+
+      <h3>Conclusion</h3>
+      <p>Pakistan cricket is at a crossroads. The recent clash was more than a defeat—it was a wake-up call. If Pakistan wants to compete, management must rebuild with honesty, stability, and merit. Otherwise, India will continue pulling further ahead while Pakistan lingers in inconsistency.</p>
+    </div>
   </main>
 
   <footer>
     &copy; 2025 Bakhabar Pakistan. All rights reserved.
   </footer>
-
 </body>
 </html>
